@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="../../../css/TX_list.css"/>
+    <link rel="stylesheet" href="../客户管理/css/aticle-add.css"/>
+    <title></title>
+    <style>
+        .col-sm-2 input.form-control,.col-sm-6 input.form-control{display: inline-block!important;}
+        .col-sm-1,.col-sm-2{display: inline-block;}
+        .row .span1:first-child{}
+        .row .span1+.span1{width:180px;}
+        .span4.column{position:absolute;right:10px;top:10px;}
+        #alipayConfig .txFeeConfig label{width:60px;}
+        .txFeeConfig input{width:150px;}
+        .icon-plus-sign{width:30px;height:30px;background: #003399;}
+        .icon-minus-sign{width:30px;height:30px;background: #3ea;}
+    </style>
+</head>
+<body>
+<div class="container-fluid pull-left">
+    <div id="pad-wrapper" class="form-page">
+        <div class="row-fluid header">
+            <h3>品种管理&nbsp;>&nbsp;添加品种</h3>
+        </div>
+        <div class="row-fluid form-wrapper">
+            <form action="" method="post">
+                <!-- left column -->
+                <div>
+                    <label>商品名称</label><input type="text" placeholder="商品名称"/>
+                </div>
+                <div class="">
+                    <label class="col-sm-2">显示名称</label><input type="text" placeholder="显示名称"/>
+                </div>
+
+                <div class="">
+                    <label >交易所</label> <select name="" id="">
+                    <option value="">津贵所</option>
+                    <option value="">wtc原油</option>
+                    <option value="">伦敦金属</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <label>品种编码</label><select name="" id="">
+                    <option value="">津贵所|白银</option>
+                    <option value="">津贵所|铜</option>
+                    <option value="">WTL原油</option>
+                    <option value="">伦敦金属LYE</option>
+                </select>
+                </div>
+
+
+                <div class="">
+                    <label class="col-sm-2 control-label">基础交易时间</label><input type="text" class="form-control" placeholder="基础交易时间"/>
+                </div>
+                <div class="form-group container-fluid">
+                    <div class="row">
+                        <div class="span1">交易规则</div>
+                        <div class="span1">点数</div>
+                        <div class="span1">收益率(%)</div>
+                        <div class="span1">时间(分钟)</div>
+                        <div class="span1">收益率(%)</div>
+                    </div>
+                </div>
+                <div class="container-fluid form-group">
+                    <div class="row">
+                        <div class="col-sm-1  col-sm-off-1">第一档</div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" /></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1  col-sm-off-1">第二档</div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" /></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1  col-sm-off-1">第三档</div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" /></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1  col-sm-off-1">第四档</div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" /></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1  col-sm-off-1">第五档</div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" /></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right"/></div>
+                        <div class="col-sm-2"><input type="text" class="form-control" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right"/></div>
+                    </div>
+                </div>
+                <div class="span8 column">
+                    <!--<div class="field-box">
+                        <label>商品名称：</label>
+                        <input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入商品名称" data-placement="right" name="ptitle"/>
+                    </div>
+                    <div class="field-box">
+                        <label>显示名称：</label>
+                        <input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入前端显示名称" data-placement="right" name="displayname"/>
+                    </div>
+                    <div class="field-box">
+                        <label>交易所:</label>
+                        <div class="ui-select span5">
+                            <select style="width:100%" name="bourse">
+                                <option value="TJGJS">津贵所</option><option value="WTI">WTI原油</option><option value="LDJS">伦敦金属</option>							</select>
+                        </div>
+                    </div>-->
+                    <!--<div class="field-box">
+                        <label>品种编码:</label>
+                        <div class="ui-select span5">
+                            <select style="width:100%" name="code">
+                                <option value="TJXAG">津贵所|白银</option><option value="TJCU">津贵所|铜</option><option value="CONC">WTI原油</option><option value="LMAI">伦敦金属|LME铝</option>							</select>
+                        </div>
+                    </div>-->
+                    <!--点差矫正-->
+                    <div class="field-box">
+                        <label>点差矫正:</label>
+                        <ul class="span6">
+                            <li  style="list-style-type:none;">
+                                <label>点差加</label>
+                                <input class="span2" type="text" data-toggle="tooltip" data-trigger="focus" title="正数为加，负数为减" data-placement="right" name="patj" value="0"/>
+                            </li>
+                            <li  style="list-style-type:none;">
+                                <label>点差乘</label>
+                                <input class="span2" type="text" data-toggle="tooltip" data-trigger="focus" title="大于1为乘，大于0小于1为除" data-placement="right" name="patx" value="1"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<div class="field-box">
+                        <label>基础交易时间：</label>
+                        <div class="span8">
+  &lt;!&ndash;                          <table class='table'>
+                                <thead>
+                                <tr>
+                                    <th class="span1">
+                                        <span ></span>日期
+                                    </th>
+                                    <th class="span3">
+                                        <span ></span>开始时刻
+                                    </th>
+                                    <th class="span3">
+                                        <span ></span>结束时刻
+                                    </th>
+                                    <th class="span1">
+                                        <span ></span>操作
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr  class="first">
+                                    <td>
+                                        星期一
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart1[]"/><br>
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend1[]"/><br>
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+                                    </td>
+                                </tr>
+                                <tr  class="first">
+                                    <td>
+                                        星期二
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart2[]"/>
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend2[]"/>
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+                                    </td>
+                                </tr>
+                                <tr  class="first">
+                                    <td>
+                                        星期三
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart3[]"/>
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend3[]"/>
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+                                    </td>
+                                </tr>
+                                <tr  class="first">
+                                    <td>
+                                        星期四
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart4[]"/>
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend4[]"/>
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+                                    </td>
+                                </tr>
+                                <tr  class="first">
+                                    <td>
+                                        星期五
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart5[]"/>
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend5[]"/>
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+                                    </td>
+                                </tr>
+                                <tr  class="first">
+                                    <td>
+                                        星期六
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart6[]"/>
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend6[]"/>
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+                                    </td>
+                                </tr>
+                                <tr  class="first">
+                                    <td>
+                                        星期日
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart7[]"/>
+                                    </td>
+                                    <td>
+                                        <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend7[]"/>
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>&ndash;&gt;
+                        </div>
+                    </div>-->
+                    <!--交易规则-->
+                    <div class="field-box jygz">
+                        <!--<tr  class="first">
+                            <td>
+                                第一档
+                            </td>
+                            <td>
+                                <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right" name="dianshu1"/><br>
+                            </td>
+                            <td>
+                                <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" name="profit_dianshu_1"/><br>
+                            </td>
+                            <td>
+                                <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right" name="shijian1"/><br>
+                            </td>
+                            <td>
+                                <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right" name="profit_shijian_1"/><br>
+                            </td>
+                        </tr>
+                        <tr  class="first">
+                            <td>
+                                第二档
+                            </td>
+                            <td>
+                                <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right" name="dianshu2"/><br>
+                            </td>
+                            <td>
+                                <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" name="profit_dianshu_2"/><br>
+                            </td>
+                            <td>
+                                <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right" name="shijian2"/><br>
+                            </td>
+                            <td>
+                                <input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right" name="profit_shijian_2"/><br>
+                            </td>
+                        </tr>-->
+                        <!--交易时间选项-->
+                        <div class="row">
+                            <div class="span1">日期</div>
+                            <div class="span1">开始时刻</div>
+                            <div class="span1">结束时刻</div>
+                            <div  class="span1">操作</div>
+                        </div>
+                        <div id="alipayConfig">
+                            <div class="field-box txFeeConfig" id="firBox">
+                                <div class="txFeeConfigRow">
+                                    <label>星期一</label>
+                                    <input class="ZFmoney1" type="text" style="display: inline-block; " data-toggle="tooltip" data-trigger="focus" title="请输入开始时间如04:00" data-placement="right" />
+
+                                    <input class="ZFmoney2" type="text" style="display: inline-block;" data-toggle="tooltip"  data-trigger="focus" title="请输入点数结束时间比如14:00" data-placement="right"/>
+
+                                    <i class="icon-plus-sign addTXFeeConfig" style="cursor:pointer"></i>
+                                </div>
+                            </div>
+                            <div class="field-box txFeeConfig" id="secBox">
+                                <div class="txFeeConfigRow">
+                                    <label>星期二</label>
+                                    <input class="ZFmoney1" type="text" style="display: inline-block; " data-toggle="tooltip" data-trigger="focus" title="请输入开始时间如04:00" data-placement="right" />
+
+                                    <input class="ZFmoney2" type="text" style="display: inline-block;" data-toggle="tooltip"  data-trigger="focus" title="请输入点数受益率" data-placement="right"/>
+
+                                    <i class="icon-plus-sign addTXFeeConfig" style="cursor:pointer"></i>
+                                </div>
+                            </div>
+                            <div class="field-box txFeeConfig" id="thiBox">
+                                <div class="txFeeConfigRow">
+                                    <label>星期三</label>
+                                    <input class="ZFmoney1" type="text" style="display: inline-block; " data-toggle="tooltip" data-trigger="focus" title="请输入开始时间如04:00" data-placement="right" />
+
+                                    <input class="ZFmoney2" type="text" style="display: inline-block;" data-toggle="tooltip"  data-trigger="focus" title="请输入点数受益率" data-placement="right"/>
+
+
+                                    <i class="icon-plus-sign addTXFeeConfig" style="cursor:pointer"></i>
+                                </div>
+                            </div>
+                            <div class="field-box txFeeConfig" id="forBox">
+                                <div class="txFeeConfigRow">
+                                    <label>星期四</label>
+                                    <input class="ZFmoney1" type="text" style="display: inline-block; " data-toggle="tooltip" data-trigger="focus" title="请输入开始时间如04:00" data-placement="right" />
+
+                                    <input class="ZFmoney2" type="text" style="display: inline-block;" data-toggle="tooltip"  data-trigger="focus" title="请输入点数受益率" data-placement="right"/>
+                                    <i class="icon-plus-sign addTXFeeConfig" style="cursor:pointer"></i>
+                                </div>
+                            </div>
+                            <div class="field-box txFeeConfig" id="fifBox">
+                                <div class="txFeeConfigRow">
+                                    <label>星期五</label>
+                                    <input class="ZFmoney1" type="text" style="display: inline-block; " data-toggle="tooltip" data-trigger="focus" title="请输入开始时间如04:00" data-placement="right" />
+                                    <input class="ZFmoney2" type="text" style="display: inline-block;" data-toggle="tooltip"  data-trigger="focus" title="请输入点数受益率" data-placement="right"/>
+                                    <i class="icon-plus-sign addTXFeeConfig" style="cursor:pointer"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-box">
+                    <label>品种交易状态:</label>
+                    <div class="ui-select span5">
+                        <select style="width:100%" name="status">
+                            <option  value="1">可以交易</option><option  value="2">停止交易</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field-box jygz  actions">
+                    <input type="text" class="btn-glow dumbit primary" value="提交"><span>或</span><input type="reset" value="重置" class="reset">
+                </div>
+            </form>
+        </div>
+
+        <!-- right column -->
+        <div class="span4 column pull-right">
+            <div class="field-box"><h3>说明：</h3></div>
+            <div class="field-box">1、显示名称为前端客户可以看到的品种名称，如：“原油”显示为“芳烃”</div>
+            <div class="field-box">2、交易时间填写为24小时制的时分，如：开始时间0600，休市时间0400；开始时间空白时，表示当天休市</div>
+            <div class="field-box">3、具体每天时间如有微调，可以在日历设置页面进行详细设置</div>
+            <div class="field-box">4、品种如果停止交易，前端将不再显示该品种</div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="../../../js/jquery-1.11.3.js"></script>
+<script src="../客户管理/js/bootstrap.min.js"></script>
+<script src="../客户管理/js/threm.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        setdashboardmenu("产品管理");
+
+        $(".peroidplus").click(function (){
+            var parent_tr = this.parentNode.parentNode;
+            var startInput = parent_tr.children[1].children[0].cloneNode(true);
+            var endInput = parent_tr.children[2].children[0].cloneNode(true);
+            parent_tr.children[1].appendChild(startInput);
+            parent_tr.children[2].appendChild(endInput);
+        });
+    });
+    //新增元素
+    var newEle;
+    $('.addTXFeeConfig').click(function(){
+        newEle=$(this).parent().clone();
+        var a=newEle.find('i').attr('class','icon-minus-sign');
+        newEle.find('label').text(' ');
+        newEle.find('input').each(function(){
+            $(this).val(' ');
+        });
+        newEle.find('i').bind('click',function(){
+            $(this).parent().remove();
+        })
+        $(this).parent().parent().append(newEle);
+    });
+    // 点差矫正 更新 2017-3-16 19:12:45
+    /* function patupd(type) {
+     var $darr={"type":type,"pid":$("[name='pid']").val(),"patj":$("[name='patj']").val(),"patx":$("[name='patx']").val()};
+     $.ajax({
+     cache: true,
+     type: "get",
+     data:$darr,
+     url: "/index.php/Admin/Goods/geditbypat.html",
+     error: function() {
+     alert('服务器异常');
+     },
+     success: function(msg) {
+     alert(msg);
+     }
+     });
+     }*/
+</script>
+<script>
+    var inclick=true;
+    //    基础交易规则
+    $('.jcjy .sumbit').click(function(){
+        if(inclick){
+            alert('请输入交易时间')
+            return;
+        }
+
+        var productParams=[];
+        var proParams={};
+        proParams["pname"]=$('[name=ptitle]').val();
+
+        proParams["showname"]=$('[name="displayname"]').val();
+        proParams["bourse"]=$('[name="bourse"]').val();
+        proParams["code"]=$('[name="code"]').val();
+        proParams["patj"]=$('[name="parj"]').val();
+        proParams["code"]=$('[name="code"]').val();
+        proParams["code"]=$('[name="code"]').val();
+        proParams["jydata"]={};
+        var datajy=$('.jcjy .first');
+
+        for(var j= 0;j<datajy.length;j++){
+            var i=j+1;
+            proParams["jydata"]["start"+i]=$('[name="tstart'+i+'[]"]').val();
+            proParams["jydata"]["end"+i]=$('[name="tstart'+i+'[]"]').val();
+        }
+        $.ajax({
+            type:"post",
+            url:"http:www.baidu.com",
+            data:{"pa":JSON.stringify(proParams)},
+            success:function(data){
+                console.log(params);
+            },
+            error:function(data){
+                console.log(params);
+            }
+        });
+    })
+    //交易规则按钮
+    $('.jygz .dumbit').click(function(){
+        var tradeParams=[];
+        var tParams={};
+        inclick=true;
+        jygz=$('.jygz .first');
+        //循环遍历交易规则的输入
+        /*for(var j= 0;j<jygz.length;j++){
+         tradeParams[j]={};
+         var i=j+1;
+         tradeParams[j]["dianshu"+i]=$('[name="dianshu'+i+'"]').val();
+         tradeParams[j]["profit_dianshu_"+i]=$('[name="profit_dianshu_'+i+'"]').val();
+         tradeParams[j]["shijian"+i]=$('[name="shijian'+i+'"]').val();
+         tradeParams[j]["profit_shijian_"+i]=$('[name="profit_shijian_'+i+'"]').val();
+
+         }*/
+        var jypost= JSON.stringify(tradeParams)
+        console.log(jypost);
+        $.ajax({
+            type:"post",
+            url:"http:www.baidu.com",
+            data:jypost,
+            success:function(data){
+                console.log(params);
+            },
+            error:function(data){
+                console.log(params);
+            }
+        })
+
+    })
+
+</script>
+<script type="text/javascript">
+    var wid = $(window).height();
+    document.writeln('<div id="popupLayer" style="position:absolute;z-index:2;width:100%;height:'+wid+'px;left:0;top:0;opacity:0.3;filter:Alpha(opacity=30);background:#000;display: none;"></div>');
+</script>
+
+</body>
+</html>
