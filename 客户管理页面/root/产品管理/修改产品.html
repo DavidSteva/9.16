@@ -411,29 +411,13 @@
         })
         $(this).parent().parent().append(newEle);
     });
-    // 点差矫正 更新 2017-3-16 19:12:45
-    /* function patupd(type) {
-     var $darr={"type":type,"pid":$("[name='pid']").val(),"patj":$("[name='patj']").val(),"patx":$("[name='patx']").val()};
-     $.ajax({
-     cache: true,
-     type: "get",
-     data:$darr,
-     url: "/index.php/Admin/Goods/geditbypat.html",
-     error: function() {
-     alert('服务器异常');
-     },
-     success: function(msg) {
-     alert(msg);
-     }
-     });
-     }*/
 </script>
 <script>
     var inclick=true;
     //    基础交易规则
     $('.jcjy .sumbit').click(function(){
         if(inclick){
-            alert('请输入交易时间')
+            alert('请输入交易时间');
             return;
         }
 
