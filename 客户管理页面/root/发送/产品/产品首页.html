@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="../../../css/TX_list.css">
+    <link rel="stylesheet" href="../../../css/homepage.css">
+    <style>
+        /*.operate-block span{padding:5px 10px;margin-left:10px;border-radius:5px; background:#}*/
+    </style>
+    <title></title>
+</head>
+<body>
+<h3>产品管理&nbsp;>&nbsp;产品列表</h3>
+<div class="btn btn-success">添加商品</div>
+<form action="">
+<div id="showTab">
+<table>
+    <tr>
+        <td>编号</td>
+        <td>商品名称</td>
+        <td>显示名称</td>
+        <td>编码</td>
+        <td>编码</td>
+        <td>编码</td>
+    </tr>
+</table>
+</div>
+    <div class="operate-block "> <span class="choose-all btn btn-success">全选</span> <span class="choose-no btn btn-success">全不选</span><span class="reverse btn btn-success">反选</span> <span class="operate-some btn btn-success">批量操作</span></div>
+</form>
+</body>
+<script>
+    $('#showTab').jqGrid({
+        datatype: "json",
+        url: '',
+        data: 'local',
+        colModel: [
+            {label: 'uid', name: 'c', align: '', width: 10, hidden: true},
+            {label: '编号', name: 'd', align: 'center', width: 40},
+            {label: '商品名称', name: 'g', align: 'center', width: 120},
+            {label: '显示名称', name: 'bia', align: 'center', width: 140},
+            {label: '编码', name: 'JY', align: 'center', width: 80},
+            {label: '交易所', name: 'STA', align: 'center', width: 120},
+            {label: '状态', name: 'dec', align: 'center', width: 80},
+            {label: '日历', name: 'chak', align: 'center', width: 80},
+            {label: '操作', name: 'canz', align: 'center', width: 80, formatter:function(value, option, rowobj){
+                function del(){
+                $('#showTab').jqGrid('delRowData', rowid)
+            }
+        return '<div onclick=' + del + '>' + value + '</div>';
+    }
+    }
+    ]
+
+    })
+
+</script>
+</html>

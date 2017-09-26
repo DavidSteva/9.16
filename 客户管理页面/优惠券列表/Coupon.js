@@ -1,5 +1,11 @@
+var btnAdd='<button @click="vm.add">添加优惠券</button>';
+var detaoBtn='<div class="operate-block "> <span class="choose-all">全选</span> <span class="choose-no">全不选</span> <span class="reverse">反选</span> <span class="operate-some">批量操作</span></div>'
 var vm = new Vue({
 	el:'#rrapp',
+	templates:{
+		button:'btnAdd',
+		opeatae:'detaoBtn'
+	},
 	data:{
 		q:{
 			content: null

@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>基本设置</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="plugins/jqgrid/ui.jqgrid-bootstrap.css">
+<link rel="stylesheet" href="plugins/ztree/css/metroStyle/metroStyle.css">
+<link rel="stylesheet" href="css/main.css">
+<!-- <link rel="stylesheet" href="../../css/button.css"> -->
+	<script src="libs/jquery.min.js"></script>
+<!--<script src="plugins/layer/layer.js"></script>-->
+<script src="libs/bootstrap.min.js"></script>
+
+<!--<script src="libs/vue.min.js"></script>-->
+<!--<script src="libs/validator.min.js"></script>-->
+<!--<script src="plugins/jqgrid/grid.locale-cn.js"></script>-->
+<!--<script src="plugins/jqgrid/jquery.jqGrid.min.js"></script>-->
+<!--<script src="plugins/ztree/jquery.ztree.all.min.js"></script>-->
+<!--<script src="js/common.js"></script>-->
+	<style>
+		.icon-plus-sign { display: inline-block;width: 20px;height: 20px;
+			background: url("img/manager.png")1px -25px no-repeat;
+			position:relative;top: 6px;left: -2px;
+			background-color: #FFFFFF;
+		}
+		.icon-minus-sign { display: inline-block;width: 20px;height: 20px;
+			background: url("img/manager.png") -36px -25px no-repeat;
+			position:relative;top: 6px;left: -2px;
+			background-color: #FFFFFF;
+		}
+	</style>
+</head>
+<body>
+	<form class="form-horizontal">
+		<!-- 一个隐藏的input  存放id -->
+		<input type="hidden" id="sid" name="id" >
+		<div class="form-group">
+		   	<div class="col-sm-2 control-label">单笔提现最小金额</div>
+		   	<div class="col-sm-7">
+		     <input type="text" class="form-control form-tip"  name="minAmount" id="minAmount"/>
+		    </div>
+		    
+		</div>
+		<div class="form-group">
+		   	<div class="col-sm-2 control-label">每个客户每天最大提现金额</div>
+		   	<div class="col-sm-7" style="display:block">
+		      <input type="text" class="form-control"  name="maxAmountPerUserDay" id="maxAmountPerUserDay"/>
+		    </div>
+		</div>
+		<div class="form-group">
+		   	<div class="col-sm-2 control-label">每客户每天最大提现次数</div>
+		   	<div class="col-sm-7">
+		      <input type="text" class="form-control"  name="maxTimesPerUserDay" id="maxTimesPerUserDay"/>
+		    </div>
+		</div>
+		<div class="form-group">
+		   	<div class="col-sm-2 control-label">提现时间</div>
+		   	<div class="col-sm-3">
+		      <input type="text" class="form-control"  name="withdrawTimeS" id="withdrawTimeS"/>
+		    </div>
+		    <div class="col-sm-1">
+		      <span>点到</span>
+		    </div>
+		    <div class="col-sm-3">
+		      <input type="text" class="form-control"  name="withdrawTimeE" id="withdrawTimeE"/>
+		    </div>
+		</div>
+		<div class="form-group">
+		   	<div class="col-sm-2 control-label">提现提醒</div>
+		   	<div class="col-sm-7">
+		       <textarea rows="4" class="form-control" name="feeTips" id="feeTips">
+				    支付宝已实名认证的，每日限额20000元；
+未实名认证的，每日限额2000元。 银联必须实名认证后才能提现！
+			   </textarea>
+		    </div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-2 control-label"></div> 
+			<input type="button" class="btn btn-primary"  value="提交"/>
+		</div>
+	</form>
+	<hr />
+	  <!--银联设置-->
+	<div class="field-box" style="padding-left:0px">
+		<label style="width:100%"><h3><b>银联提现设置</b></h3></label>
+		<input type="hidden" name="type" value="1">
+	</div>
+	<div id="unionpayConfig">
+		<div class="field-box txFeeConfig" style="margin-top:0px" id="fbox">
+			<div class="txFeeConfigRow">
+				<label>手续费设置</label>
+				<input class="form-control money_price1" type="text" style="width:80px;display: inline-block"/>
+				<select class="form-control" style="width:65px;display: inline-block">
+					<option>＜</option>
+				</select>
+				提现金额
+				<select class="form-control" style="width:65px;display: inline-block">
+					<option>≤</option>
+				</select>
+				<input class="form-control money_price2" type="text" style="width:80px;display: inline-block"/>
+				时，
+				<input class="form-control money_price3" type="text" style="width:80px;display: inline-block"/>
+				<select class="form-control money_price4" style="width:80px;display: inline-block;">
+					<option value='1'>元/笔</option>
+					<option value="0">%</option>
+				</select>
+				<i class="icon-plus-sign addTXFeeConfig" style="cursor:pointer"></i>
+				<button class="btn btn-primary" id="price-btn">提交</button>
+			</div>
+		</div>
+	</div>
+
+
+	            <!--支付宝设置-->
+	<div class="field-box" style="padding-left:0px">
+		<label><h3><b>支付宝提现设置</b></h3></label>
+		<input type="hidden" name="type" value="0">
+	</div>
+	<div id="alipayConfig">
+		<div class="field-box txFeeConfig" id="Zfbox">
+			<div class="txFeeConfigRow">
+				<label>手续费设置</label>
+				<input class="form-control ZFmoney1" type="text" style="width:80px;display: inline-block; "/>
+				<select class="form-control" style="width:65px;display: inline-block">
+					<option value="lt" selected>＜</option>
+				</select>
+				提现金额
+				<select class="form-control" style="width:65px;display: inline-block">
+					<option>≤</option>
+				</select>
+				<input class="form-control ZFmoney2" type="text" style="width:80px;display: inline-block;"/>
+				时，
+				<input class="form-control ZFmoney3" type="text" style="width:80px;display: inline-block;"/>
+				<select class="form-control rate ZFmoney4" id="Rate" style="width:80px;display: inline-block">
+					<option>元/笔</option>
+					<option>%</option>
+				</select>
+				<i class="icon-plus-sign addTXFeeConfig" style="cursor:pointer"></i>
+				<button class="btn btn-primary" id="Zprice-btn">提交</button>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<script src="js/modules/sysST/txsetting.js"></script>
+	<script>
+		//    银联
+		$("#price-btn").click(function () {
+            var sendparams = [];
+			var moneyinput1 = $('#fbox').find(".money_price1");//获取这个元素下所有class位money_preice的元素
+			var moneyinput2 = $('#fbox').find(".money_price2");//获取这个元素下所有class位money_preice的元素
+			var moneyinput3 = $('#fbox').find(".money_price3");//获取这个元素下所有class位money_preice的元素
+			var moneyinput4 = $('#fbox').find(".money_price4");//获取这个元素下所有class位money_preice的元素
+			//进行遍历  存入数组中
+            for(var i = 0 ;i < moneyinput1.length;i++){
+                var params = {};
+                params["one"] = $(moneyinput1[i]).val();
+                params["two"] = $(moneyinput2[i]).val();
+                params["tree"] = $(moneyinput3[i]).val();
+//                params['rate']=$('.rate').children("option :selected").val();
+                params['type'] = $(moneyinput4[i]).val();
+                sendparams[i] = params;
+            }
+            console.log(sendparams);
+			$.ajax({
+				type:"post",
+				url:"http:www.baidu.com",
+				data:{"pa":JSON.stringify(sendparams)},
+				success:function(data){
+					console.log(params);
+				},
+				error:function(data){
+					console.log(params);
+				}
+			});
+		});
+		//支付吧
+		$("#Zprice-btn").click(function () {
+			var param = {};
+			var monezinput1 = $('#Zfbox').find(".ZFmoney1");//获取这个元素下所有class位money_preice的元素
+			var monezinput2 = $('#Zfbox').find(".ZFmoney2");//获取这个元素下所有class位money_preice的元素
+			var monezinput3 = $('#Zfbox').find(".ZFmoney3");//获取这个元素下所有class位money_preice的元素
+			var monezinput4 = $('#Zfbox').find(".ZFmoney4");//获取这个元素下所有class位money_preice的元素
+			//进行遍历  存入数组中
+			for(var i = 0 ;i < monezinput1.length;i++){
+				param["one"+i] = $(monezinput1[i]).val();
+				param["two"+i] = $(monezinput2[i]).val();
+				param["tree"+i] = $(monezinput3[i]).val();
+				param['type'+i] = $(monezinput4[i]).val();
+			}
+			$.ajax({
+				type:"post",
+				url:"",
+				data:param,
+				success:function(data){
+					console.log(param);
+				},
+				error:function(data){
+					console.log(param);
+				}
+			});
+		});
+
+		//d克隆
+		var newEle;
+		$('.addTXFeeConfig').click(function(){
+			newEle=$(this).parent().clone();
+			var a=newEle.find('i').attr('class','icon-minus-sign');
+			newEle.find('button').remove();
+			newEle.find('i').bind('click',function(){
+				$(this).parent().remove();
+			})
+			$(this).parent().parent().append(newEle);
+		});
+
+	</script>
+</body>
+</html>

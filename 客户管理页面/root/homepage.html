@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>定时任务</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/font-awesome.min.css">
+<link rel="stylesheet" href="../../plugins/jqgrid/ui.jqgrid-bootstrap.css">
+<link rel="stylesheet" href="../../plugins/ztree/css/metroStyle/metroStyle.css">
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="../../css/TX_list.css">
+<link rel="stylesheet" href="../../css/homepage.css">
+
+<!--<script src="../../js/common.js"></script>-->
+</head>
+<>
+<div id="managerHead">
+	<ul>
+		<li></li>
+		<li>
+			<div class="ttinfo"><span class="ttnum">6</span>用户</div>
+			<div class="add-info">截止到 <span id="nowTime">
+					2017-09-17 &nbsp;&nbsp;09:06:00
+				</span></div>
+		</li>
+		<li>
+			<div class="ttinfo"><span class="ttnum">0</span>订单</div>
+			<div class="add-info">最近7天</div>
+		</li>
+		<li>
+			<div class="ttinfo"><span class="ttnum">¥900</span>交易总额</div>
+			<div class="add-info">最近30天</div>
+		</li>
+
+	</ul>
+</div>
+<div id="rrapp" v-cloak>
+
+	<div v-show="showList">
+		<div class="grid-btn" style="height:34px;">
+			<!-- <a v-if="hasPermission('noticeSetting:add')" class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+			<a v-if="hasPermission('sys:sysCustomer:update')" class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+			<a v-if="hasPermission('sys:sysCustomer:delete')" class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a> -->
+		</div>
+	    <table id="jqGrid"></table>
+	    <div id="jqGridPager"></div>
+	</div>
+	
+	<div v-show="!showList" class="panel panel-default">
+		<div class="panel-heading">{{title}}</div>
+		<form class="form-horizontal">
+		<!-- <div class="form-group">
+				<div class="col-sm-2 control-label">客户名</div>
+			   	<div class="col-sm-10">
+			      <input type="text" class="form-control" v-model="customer.busername" placeholder="客户名"/>
+			    </div>
+			</div>
+			<div class="form-group">
+			   	<div class="col-sm-2 control-label">客户状态</div>
+			   	<div class="col-sm-10">
+			      <input type="text" class="form-control" v-model="customer.otype"  placeholder="客户状态"/>
+			    </div>
+			</div>
+			<div class="form-group">
+			   	<div class="col-sm-2 control-label">真实姓名</div>
+			   	<div class="col-sm-10">
+			      <input type="text" class="form-control" v-model="customer.mname" placeholder="真实姓名"/>
+			    </div>
+			</div>
+			<div class="form-group">
+			   	<div class="col-sm-2 control-label">手机号</div>
+			   	<div class="col-sm-10">
+			      <input type="text" class="form-control" v-model="customer.utel" placeholder="手机号"/>
+			    </div>
+			</div>
+			<div class="form-group">
+			   	<div class="col-sm-2 control-label">所属运营中心</div>
+			   	<div class="col-sm-10">
+			   	<div class="col-sm-10">
+			      <input type="text" class="form-control" v-model="customer.operationscenter" placeholder="所属运营中心"/>
+			    </div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">是否冻结资金</div> 
+				<label class="radio-inline">
+				  <input type="radio" name="status" value="0" v-model="customer.isHookBalance" /> 不冻结
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="status" value="1" v-model="customer.isHookBalance" /> 冻结
+				</label>
+			</div>
+			<div class="form-group">
+			   	<div class="col-sm-2 control-label">身份证号码</div>
+			   	<div class="col-sm-10">
+			      <input type="text" class="form-control" v-model="customer.brokerid" placeholder="身份证号码"/>
+			    </div>
+			</div>
+			<div class="form-group">
+			   	<div class="col-sm-2 control-label">银行卡开户行</div>
+			   	<div class="col-sm-10">
+			   	<div class="col-sm-10">
+			      <input type="text" class="form-control" v-model="customer.branch" placeholder="银行卡开户行"/>
+			    </div>
+				</div>
+			</div>
+			<div class="form-group">
+			   	<div class="col-sm-2 control-label">银行卡号</div>
+			   	<div class="col-sm-10">
+			      <input type="text" class="form-control" v-model="customer.banknumber" placeholder="银行卡号"/>
+			    </div>
+			</div>
+					
+			<div class="form-group">
+				<div class="col-sm-2 control-label"></div>
+				<input type="button" class="btn btn-primary" @click="saveOrUpdate" value="确定"/>
+				&nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+			</div> -->
+		</form>
+	</div>
+</div>
+<div class="product-info">
+	<div class="prod-head"><i>产品</i>&nbsp;&nbsp;product</div>
+	<div class="product-tab">
+		<table class="product-head">
+			<thead>
+			<tr>
+				<td>产品名称</td>
+				<td>现价</td>
+				<td>最高</td>
+				<td>最低</td>
+				<td>今开</td>
+				<td>昨收</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>显示名称</td>
+				<td>0.5</td>
+				<td>90</td>
+				<td>34</td>
+				<td>23</td>
+				<td>31</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>0.5</td>
+				<td>90</td>
+				<td>34</td>
+				<td>23</td>
+				<td>31</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<script src="../../libs/jquery.min.js"></script>
+<script src="../../plugins/layer/layer.js"></script>
+<script src="../../libs/bootstrap.min.js"></script>
+<script src="../../libs/vue.min.js"></script>
+<script src="../../plugins/jqgrid/grid.locale-cn.js"></script>
+<script src="../../plugins/jqgrid/jquery.jqGrid.min.js"></script>
+<script src="../../plugins/ztree/jquery.ztree.all.min.js"></script>
+<script src="../../js/modules/sysCU/homepage.js"></script>
+</
+</html>

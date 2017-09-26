@@ -1,0 +1,16 @@
+ul li{list-style: none;display: inline-block;}
+#managerHead ul{font-size:0;border-bottom:1px solid #efeef3;background: #fdfdfd; }
+#managerHead ul li{font-size:1rem;color:#bbb;padding:15px 20px 15px 0;
+    text-align: right;border-right:1px solid #efeef3;
+    width:25%;}
+#managerHead ul li .ttinfo{font-size:2rem;color:#29323a;padding-bottom:5px;}
+#managerHead ul li .ttnum{font-size:2.5rem;color:#32a0ee;margin-right:1rem;}
+.product-head{width:100%}
+.prod-head{margin:20px 0;}
+.product-info{margin:20px;}
+.prod-head{font-style:italic;font-size:1.8em;color:#e3e3e2;}
+.prod-head i{font-size:2.4em;color:#e2e2e2;}
+.product-info table td{width:16.66%;text-align: center;padding:5px 0;border:1px solid #efeef3;}
+.product-info .product-head thead tr{background: #fdfdfd;border:1px solid #efeef3;}
+.product-info .product-head thead{border-bottom:2px solid #efeef3;}
+.product-info .product-head tbody tr:hover{background: #fdfdfd;}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/TX_list.css"/>
+    <link rel="stylesheet" href="css/Withdrawals.css"/>
+
+    <title>Master Yi Astor</title>
+
+</head>
+<body>
+<div id="txFeeConfigTemplate" style="display:none" class="txFeeConfigRow">
+    <label></label>
+    <input class="span2 fromAmount" type="text" style="width:80px"/>
+    <select class="span1 fromRelation" style="margin-bottom:10px;">
+        <option value="lt" selected>＜</option>
+    </select>
+    提现金额
+    <select class="span1 toRelation" style="margin-bottom:10px">
+        <option value="le">≤</option>
+    </select>
+    <input class="span2 toAmount" type="text" style="width:80px"/>
+    时，
+    <input class="span2 fee" type="text" style="width:80px"/>
+    <select class="span2 type" style="margin-bottom:10px;width:80px">
+        <option value="fixed">元/笔</option>
+        <option value="percent">%</option>
+    </select>
+    <i class="icon-minus-sign delTXFeeConfig" style="font-size:20px;cursor:pointer" onclick="delTXFeeConfig(this);"></i>
+</div>
+
+<div class="container-fluid">
+    <div id="pad-wrapper" class="form-page">
+        <div class="row-fluid form-wrapper">
+            <!-- left column -->
+            <div class="span9 column esystem">
+                <div class="field-box" style=";padding-left:0px">
+                    <label style="width:100%"><h3><b>通用提现设置</b></h3></label>
+                </div>
+                <div style="border-bottom: 1px solid #dee3ea;width: 96.3%; position: relative;float: left;padding-bottom:10px;padding-left:20px;display:none ;">
+                    <label>是否允许秒提</label>
+                    <input type="checkbox" id="enableMiaoti" value="0"/>
+                </div>
+                <div class="field-box" style="margin-top:0px">
+                    <label>单笔最小提现金额</label>
+                    <input class="span6 money" type="text" id="minAmount"/>
+                </div>
+                <div class="field-box" style="margin-top:10px">
+                    <label>每客户每天最大提现金额</label>
+                    <input class="span6 money"  name=" " type="text" id="maxAmountPerUserDay"/>
+                </div>
+                <div class="field-box" style="margin-top:0px">
+                    <label>每客户每天最大提现次数</label>
+                    <input class="span6 count"  name=" " type="text" id="maxTimesPerUserDay"/>
+                </div>
+                <div class="field-box" style="margin-top:0;display: none;">
+                    <label>系统每天最大提现金额</label>
+                    <input class="span6 money" name=" "type="text" id="maxAmountPerDay"/>
+                </div>
+                <div class="field-box" style="margin-top:0px">
+                    <label>每客户每提现时间</label>
+                    <input class="span2 money" type="text" id="withdrawTimeS"/>
+                    <span>点 到</span>
+                    <input class="span2 money" type="text" id="withdrawTimeE"/>
+                    <span>点</span>
+                </div>
+                <div class="field-box" style="margin-top:0px;margin-bottom:0px">
+                    <label>提现提示</label>
+                    <textarea class="span8 feeTips" rows="2" style="margin-bottom:10px;">
+         支付宝已实名认证的，每日限额20000元；
+未实名认证的，每日限额2000元。 银联必须实名认证后才能提现！
+                    </textarea>
+                    <button class="btn-default btn-info" id="ty">提交</button>
+                </div>
+
+                <!--<div class="field-box" style="padding-left:0px">-->
+                    <!--<label style="width:100%"><h3><b>微信提现设置</b></h3></label>-->
+                <!--</div>-->
+                <!--<div id="wxConfig">-->
+                    <!--<div class="field-box txFeeConfig" style="margin-top:0px">-->
+                        <!--<div class="txFeeConfigRow">-->
+                            <!--<label>手续费设置</label>-->
+                            <!--<input class="span2 fromAmount money" type="text" style="width:80px"/>-->
+                            <!--<select class="span1 fromRelation" style="margin-bottom:10px">-->
+                                <!--<option value="lt" selected>＜</option>-->
+                                <!--<option value="le">≤</option>-->
+                            <!--</select>-->
+                            <!--提现金额-->
+                            <!--<select class="span1 toRelation" style="margin-bottom:10px">-->
+                                <!--<option value="lt" selected>＜</option>-->
+                                <!--<option value="le">≤</option>-->
+                            <!--</select>-->
+                            <!--<input class="span2 toAmount money" type="text" style="width:80px"/>-->
+                            <!--时，-->
+                            <!--<input class="span2 fee money" type="text" style="width:80px"/>-->
+                            <!--<select class="span2 type" style="margin-bottom:10px;width:80px">-->
+                                <!--<option value='fixed'>元/笔</option>-->
+                                <!--<option value="percent">%</option>-->
+                            <!--</select>-->
+                            <!--<i class="icon-plus-sign addTXFeeConfig" style="font-size:20px;cursor:pointer"></i>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="field-box" style="margin-top:0px;margin-bottom:0px">-->
+                        <!--<label>提现提示</label>-->
+                        <!--<textarea class="span8 feeTips" rows="2" style="margin-bottom:10px;"></textarea>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+                <div class="field-box" style="padding-left:0px">
+                    <label style="width:100%"><h3><b>银联提现设置</b></h3></label>
+                </div>
+                <div id="unionpayConfig">
+                    <div class="field-box txFeeConfig" style="margin-top:0px">
+                        <div class="txFeeConfigRow">
+                            <label>手续费设置</label>
+                            <input class="span2 fromAmount money" type="text" style="width:80px"/>
+                            <select class="span1 fromRelation" style="margin-bottom:10px">
+                                <option value="lt" selected>＜</option>
+                            </select>
+                            提现金额
+                            <select class="span1 toRelation" style="margin-bottom:10px">
+                                <option value="le">≤</option>
+                            </select>
+                            <input class="span2 toAmount money" type="text" style="width:80px"/>
+                            时，
+                            <input class="span2 fee money" type="text" style="width:80px"/>
+                            <select class="span2 type" style="margin-bottom:10px;width:80px">
+                                <option value='fixed'>元/笔</option>
+                                <option value="percent">%</option>
+                            </select>
+                            <i class="icon-plus-sign addTXFeeConfig" style="font-size:20px;cursor:pointer"></i>
+                            <input type="hidden" name="type" id="yl" value="1">
+                            <button class="btn-default btn-info">提交</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-box" style="padding-left:0px">
+                    <label style="width:100%"><h3><b>支付宝提现设置</b></h3></label>
+                </div>
+                <div id="alipayConfig">
+                    <div class="field-box txFeeConfig" style="margin-top:0px">
+                        <div class="txFeeConfigRow">
+                            <label>手续费设置</label>
+                            <input class="span2 fromAmount money" type="text" style="width:80px"/>
+                            <select class="span1 fromRelation" style="margin-bottom:10px">
+                                <option value="lt" selected>＜</option>
+                            </select>
+                            提现金额
+                            <select class="span1 toRelation" style="margin-bottom:10px">
+                                <option value="le">≤</option>
+                            </select>
+                            <input class="span2 toAmount money" type="text" style="width:80px"/>
+                            时，
+                            <input class="span2 fee money" type="text" style="width:80px"/>
+                            <select class="span2 rate" style="margin-bottom:10px;width:80px">
+                                <option value='1'>元/笔</option>
+                                <option value="0">%</option>
+                            </select>
+                            <input type="hidden" name="type" id="zfb" value="0">
+                            <i class="icon-plus-sign addTXFeeConfig" style="font-size:20px;cursor:pointer"></i>
+                            <button class="btn-default btn-info" id="zf">提交</button>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="span8 field-box actions" style="margin-top:0px;margin-bottom:0px;text-align:center;padding-bottom:10px;padding-top:10px">-->
+                    <!--<input type="button" class="btn-default btn-info" value="提交" onclick="saveConfig();">-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/wysihtml5-0.3.0.js"></script>
+<script src="js/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wysihtml5_0.0.2.js"></script>
+<script src="js/bootstrap.datepicker.js"></script>
+<script src="js/jquery.uniform.min.js"></script>
+<script src="js/switch.min.js"></script>
+<script src="js/theme.js"></script>
+<script language="javascript" src="js/numeric.js"></script>
+<script>
+
+
+        $('.addTXFeeConfig').click(function(){
+            var  newEle=$(this).parent().clone();
+
+            var a=newEle.find('i').attr('className','icon-minus-sign');
+            newEle.find('button').remove();
+            newEle.find('i').bind('click',function(){
+                $(this).parent().remove();
+
+            });
+            $(this).parent().parent().append(newEle);
+        });
+
+
+    var mroe={};
+    $(document).ready(function(){
+        var $val = $("#alipayConfig").val();})
+    console.log($val);
+
+
+
+</script>
+</body>
+</html>
